@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+hoqouqi.db
+node_modules/
+dist/
+.wrangler/
+.DS_Store
+*.log
+npm-debug.log*
