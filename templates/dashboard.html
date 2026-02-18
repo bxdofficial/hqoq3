@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}لوحة التحكم{% endblock %}
+{% block content %}
+<section class="dashboard-head glass">
+  <h2>مرحباً {{ user.full_name }}</h2>
+  <p>{{ user.email }} — {{ user.user_type }}</p>
+</section>
+<section class="table-wrap glass">
+  <h3>قضاياي</h3>
+  <table>
+    <thead><tr><th>#</th><th>العنوان</th><th>النوع</th><th>الحالة</th></tr></thead>
+    <tbody>
+      {% for c in cases %}
+      <tr><td>{{ c.id }}</td><td>{{ c.title }}</td><td>{{ c.case_type }}</td><td>{{ c.status }}</td></tr>
+      {% else %}
+      <tr><td colspan="4">لا توجد قضايا بعد</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

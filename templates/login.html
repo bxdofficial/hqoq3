@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}تسجيل الدخول{% endblock %}
+{% block content %}
+<section class="form-wrap glass">
+  <h2>تسجيل الدخول</h2>
+  <form method="post" action="/login">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+    <label>البريد الإلكتروني</label>
+    <input name="email" type="email" required />
+    <label>كلمة المرور</label>
+    <input name="password" type="password" required />
+    <button class="btn btn-gold" type="submit">دخول</button>
+  </form>
+</section>
+{% endblock %}

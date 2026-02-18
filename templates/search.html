@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}بحث المحامين{% endblock %}
+{% block content %}
+<section class="dashboard-head glass"><h2>المحامون</h2><p>اختر محاميًا مناسبًا لاحتياجك.</p></section>
+<section class="grid3">
+{% for l in lawyers %}
+  <article class="glass card">
+    <h3>{{ l.full_name }}</h3>
+    <p>رقم القيد: {{ l.bar_registration_number or 'غير متاح' }}</p>
+    <p>الأتعاب تبدأ من {{ l.min_consultation_fee }} ج.م</p>
+    <p>{{ l.governorate or '-' }} / {{ l.city or '-' }}</p>
+    <span class="badge">{{ 'موثّق' if l.is_verified else 'بانتظار التحقق' }}</span>
+  </article>
+{% endfor %}
+</section>
+{% endblock %}
